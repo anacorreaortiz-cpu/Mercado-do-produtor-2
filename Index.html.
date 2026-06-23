@@ -8,3 +8,330 @@
     <p>O projeto Mercado do Produtor é uma plataforma digital desenvolvida para conectar produtores rurais diretamente aos compradores, facilitando a comercialização de produtos agrícolas e reduzindo a dependência de intermediários. O site busca promover mais visibilidade aos agricultores, aumentar suas oportunidades de venda e oferecer praticidade aos consumidores.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mercado do Produtor</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7f1;
+}
+
+header{
+    background:linear-gradient(135deg,#2e7d32,#4caf50);
+    color:white;
+    padding:15px 5%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:1.6rem;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:20px;
+}
+
+.hero{
+    height:80vh;
+    background:url("https://images.unsplash.com/photo-1500937386664-56d1dfef3854") center/cover;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+}
+
+.hero-content{
+    background:rgba(0,0,0,0.5);
+    padding:30px;
+    border-radius:15px;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.btn{
+    background:#ffc107;
+    color:#222;
+    padding:12px 25px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.search{
+    padding:40px 5%;
+    text-align:center;
+}
+
+.search input{
+    width:80%;
+    max-width:600px;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+}
+
+.filters{
+    margin-top:20px;
+}
+
+.filters button{
+    margin:5px;
+    padding:10px 15px;
+    border:none;
+    border-radius:20px;
+    background:#4caf50;
+    color:white;
+    cursor:pointer;
+}
+
+.products{
+    padding:50px 5%;
+}
+
+.products h2{
+    text-align:center;
+    margin-bottom:30px;
+    color:#2e7d32;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:15px;
+}
+
+.price{
+    color:#2e7d32;
+    font-size:1.2rem;
+    font-weight:bold;
+}
+
+.producer{
+    padding:50px 5%;
+    background:white;
+}
+
+.profile{
+    display:flex;
+    gap:20px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.profile img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+}
+
+.quote{
+    padding:50px 5%;
+    background:#e8f5e9;
+}
+
+.quote table{
+    width:100%;
+    background:white;
+    border-collapse:collapse;
+}
+
+.quote th,
+.quote td{
+    padding:15px;
+    border:1px solid #ddd;
+}
+
+footer{
+    background:#2e7d32;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:2rem;
+    }
+
+    nav{
+        display:none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <i class="fas fa-seedling"></i>
+        Mercado do Produtor
+    </div>
+
+    <nav>
+        <a href="#">Início</a>
+        <a href="#">Produtos</a>
+        <a href="#">Produtores</a>
+        <a href="#">Cotações</a>
+        <a href="#">Login</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Valorizando quem produz o alimento do Brasil</h1>
+        <p>Conectando produtores rurais e compradores sem intermediários.</p>
+        <button class="btn">Explorar Produtos</button>
+    </div>
+</section>
+
+<section class="search">
+    <h2>Encontre Produtos</h2>
+    <input type="text" placeholder="Pesquisar por produto, categoria ou região">
+
+    <div class="filters">
+        <button>Grãos</button>
+        <button>Frutas</button>
+        <button>Verduras</button>
+        <button>Legumes</button>
+        <button>Laticínios</button>
+    </div>
+</section>
+
+<section class="products">
+    <h2>Produtos Disponíveis</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc">
+            <div class="card-content">
+                <h3>Tomate</h3>
+                <p class="price">R$ 8,50/kg</p>
+                <p>📍 Maringá - PR</p>
+                <p>500 kg disponíveis</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1601493700631-2b16ec4b4716">
+            <div class="card-content">
+                <h3>Milho</h3>
+                <p class="price">R$ 65,00/saca</p>
+                <p>📍 Londrina - PR</p>
+                <p>200 sacas</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce">
+            <div class="card-content">
+                <h3>Maçã</h3>
+                <p class="price">R$ 7,90/kg</p>
+                <p>📍 Curitiba - PR</p>
+                <p>800 kg disponíveis</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="producer">
+    <h2>Perfil do Produtor</h2>
+
+    <div class="profile">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+        <div>
+            <h3>João da Silva</h3>
+            <p>Produtor rural especializado em hortaliças.</p>
+            <p>📍 Maringá - PR</p>
+            <button class="btn">Enviar Mensagem</button>
+        </div>
+    </div>
+</section>
+
+<section class="quote">
+    <h2>Cotações Agrícolas</h2>
+
+    <table>
+        <tr>
+            <th>Produto</th>
+            <th>Preço Médio</th>
+        </tr>
+
+        <tr>
+            <td>Soja</td>
+            <td>R$ 135,00/saca</td>
+        </tr>
+
+        <tr>
+            <td>Milho</td>
+            <td>R$ 65,00/saca</td>
+        </tr>
+
+        <tr>
+            <td>Trigo</td>
+            <td>R$ 78,00/saca</td>
+        </tr>
+    </table>
+</section>
+
+<footer>
+    © 2026 Mercado do Produtor • Conectando o campo ao mercado.
+</footer>
+
+</body>
+</html>
